@@ -1,0 +1,25 @@
+<!doctype html>
+<html translate="no" lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Convertidor Spreadsheet-SQL</title>
+</head>
+<body>
+	<p>Pega el embed tal y como aparece en YouTube:</p>
+	<textarea rows="10" cols="80" id="input"></textarea>
+	<p><button onclick="convertir()">Convertir</button></p>
+	<p>Resultado:</p>
+	<textarea rows="10" cols="80" id="output"></textarea>
+
+	<script>
+		function convertir() {
+			let sInput = document.getElementById("input").value;
+			let sOutput = sInput
+				.replace('width="560" height="315"', 'style="width:100%; aspect-ratio: 16/9;"');
+			document.getElementById("output").value = sOutput;
+		}
+	</script>
+</body>
+</html>
